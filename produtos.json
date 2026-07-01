@@ -10,8 +10,9 @@
     "id": "32m",
     "nome": "Button 32mm - Fundo Metal",
     "descricao": "Acabamento premium indicado para brindes institucionais e aplicações que exigem apresentação superior.",
-    "preco": 3.00,
-    "imagem": "32m.jpg"
+    "preco": 6.00,
+    "imagem": "32m.jpg",
+    "esgotado": true
   },
   {
     "id": "44p",
@@ -24,8 +25,9 @@
     "id": "44m",
     "nome": "Button 44mm - Fundo Metal",
     "descricao": "Alia padrão de mercado com acabamento diferenciado para uso profissional.",
-    "preco": 3.00,
-    "imagem": "44m.jpg"
+    "preco": 7.00,
+    "imagem": "44m.jpg",
+    "esgotado": true
   },
   {
     "id": "58p",
@@ -38,14 +40,15 @@
     "id": "58m",
     "nome": "Button 58mm - Fundo Metal",
     "descricao": "Combina grande área de impressão com acabamento de alto padrão para materiais institucionais.",
-    "preco": 3.00,
-    "imagem": "58m.jpg"
+    "preco": 8.00,
+    "imagem": "58m.jpg",
+    "esgotado": true
   },
   {
     "id": "58p-espelho",
     "nome": "Button Espelho 58mm - Fundo Plástico",
     "descricao": "Button funcional com espelho no verso. Une sua marca à praticidade do dia a dia. Ideal pra brindes úteis que as pessoas realmente usam.",
-    "preco": 10.00,
+    "preco": 3.00,
     "imagem": "58p-espelho.jpg",
     "esgotado": true
   },
@@ -53,7 +56,7 @@
     "id": "32m-nfc",
     "nome": "Button NFC 32mm - Fundo Metal",
     "descricao": "Button inteligente com chip NFC. Aproxime o celular e abra seu WhatsApp ou Instagram na hora. Perfeito pra networking e divulgação rápida.",
-    "preco": 16.00,
+    "preco": 3.00,
     "imagem": "32m-nfc.jpg",
     "esgotado": true
   }
