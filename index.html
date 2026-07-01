@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="meewmeewx - Buttons personalizados de 32mm, 44mm e 58mm. Fundo plástico ou metal. Pedido mínimo 5 unidades. 15% OFF acima de 15 buttons.">
+  <title>MEEWMEEWX</title>
+  
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:title" content="meewmeewx - Buttons Personalizados">
+  <meta property="og:description" content="Buttons 32mm, 44mm e 58mm. Fundo plástico ou metal. Com espelho ou NFC. A partir de R$5.">
+  <meta property="og:image" content="https://meewmeewx.pages.dev/logo.png">
+  <meta property="og:url" content="https://meewmeewx.pages.dev/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FF6B9D">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="banner-desconto-topo">
+    🎉 15% OFF em pedidos acima de 15 buttons
+  </div>
+
+  <div class="carrinho-float" id="carrinho-float">
+    <span class="carrinho-float-icon">🛒</span>
+    <span class="carrinho-float-count" id="carrinho-float-count">0</span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="meewmeewx" draggable="false">
+    </div>
+    <div class="header-right">
+      <button id="menu-btn">☰</button>
+      <nav id="nav">
+        <a href="#buttons">Buttons</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="buttons">
+      <h2>
+        <img src="icone-buttons.png" alt="Buttons" class="titulo-buttons" draggable="false">
+      </h2>
+      <div class="produtos" id="lista-produtos">
+        <!-- Produtos carregados via JS do produtos.json -->
+      </div>
+    </section>   
+
+    <section id="faq">
+      <h2>Perguntas frequentes</h2>
+      
+      <details>
+        <summary>Como envio minha arte?</summary>
+        <p>Depois de finalizar o pedido no WhatsApp, você manda a imagem. Aceito PNG ou JPG.</p>
+      </details>
+
+      <details>
+        <summary>Qual o prazo de produção?</summary>
+        <p>Produzo em até 2 dias úteis após confirmação do pagamento + aprovação da arte.</p>
+      </details>
+
+      <details>
+        <summary>Tem pedido mínimo?</summary>
+        <p>Sim, mínimo de 5 buttons por pedido. Acima de 15 unidades você já ganha 15% OFF automático.</p>
+      </details>
+    </section>
+  </main> 
+
+  <div class="modal-overlay" id="cart-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Seu Carrinho</h2>
+        <button class="close-modal" id="close-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="cart-items">
+        <div class="cart-empty">Carrinho vazio</div>
+      </div>
+      <div class="modal-footer" id="cart-footer" style="display: none;">
+        <input type="text" class="cliente-input" id="nome-cliente" placeholder="Seu nome" maxlength="50">
+        <div class="captcha-box">
+          <div class="captcha-pergunta" id="captcha-pergunta">Quanto é 2 + 3?</div>
+          <input type="number" class="captcha-input" id="captcha-resposta" placeholder="Resposta">
+          <div class="captcha-erro" id="captcha-erro">Resposta incorreta!</div>
+        </div>
+        <div class="aviso-desconto" id="aviso-desconto"></div>
+        <div class="desconto-info" id="desconto-info">🎉 Desconto de 15% aplicado!</div>
+        <div class="cart-subtotal" id="cart-subtotal">
+          <span>Subtotal:</span>
+          <span id="subtotal-valor">R$ 0,00</span>
+        </div>
+        <div class="cart-desconto" id="cart-desconto">
+          <span>Desconto 15%:</span>
+          <span id="desconto-valor">-R$ 0,00</span>
+        </div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total">R$ 0,00</span>
+        </div>
+        <div class="aviso-minimo" id="aviso-minimo">Pedido mínimo: 5 buttons</div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="limpar-carrinho">Limpar</button>
+          <button class="btn" id="finalizar-compra">Finalizar no WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <a href="https://instagram.com/meewmeewx" target="_blank">MEEWMEEWX </a> — Todos os direitos reservados.<br>
+    Feito por <a href="https://www.instagram.com/yriemnelleh" target="_blank">Y</a>.</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
