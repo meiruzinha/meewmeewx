@@ -656,18 +656,23 @@ footer a:hover {
     right: 15px;
     bottom: 15px;
   }
+  
+  /* ARRUMADA - IMAGENS DOS PRODUTOS NO CELULAR */
   .produto {
     flex-direction: column;
     align-items: stretch;
   }
   .produto-img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3; /* proporção fixa pra não deformar */
+    overflow: hidden;
+    border-radius: 6px;
   }
   .produto-img img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* corta sem esticar */
+    display: block;
   }
   .add-cart {
     width: 100%;
