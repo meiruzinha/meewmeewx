@@ -1,5 +1,5 @@
 const contatoLoja = '5587988116684';
-const PEDIDO_MINIMO = 5;
+const PEDIDO_MINIMO = 3;
 const DESCONTO_QTD_MINIMA = 15;
 const DESCONTO_PERCENTUAL = 0.15;
 
@@ -175,7 +175,7 @@ function mostrarToast(msg, erro = false) {
 
 function gerarLinkWpp() {
   const nome = nomeClienteInput.value.trim();
-  let msg = 'Olá! Quero fazer um pedido na meewmeewx:\n\n';
+  let msg = 'Olá! Quero fazer um pedido na MEEWMEEWX:\n\n';
   if (nome) msg += `*Nome:* ${nome}\n\n`;
 
   carrinho.forEach(item => {

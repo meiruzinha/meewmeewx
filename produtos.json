@@ -1,45 +1,61 @@
 [
   {
+    "id": "25m",
+    "nome": "Button 25mm - Fundo Metal",
+    "descricao": "Pequeno, discreto e charmoso. Perfeito para golas de jaqueta, bonés, toucas e alças de mochila. Ideal para lojas de roupa e marcas de moda (para brinde na sacola), pins corporativos de lapela para uniforme de funcionários, e o público Geek/Otaku.",
+    "preco": 5.00,
+    "imagem": "25m.jpg",
+    "esgotado": true
+  },
+  {
     "id": "32p",
     "nome": "Button 32mm - Fundo Plástico",
-    "descricao": "Leve e econômico, ideal para ações promocionais, distribuição em eventos e grandes tiragens.",
+    "descricao": "Leve, prático e com excelente custo-benefício. O tamanho é ideal para escolas e creches (identificação de alunos e lembrancinhas), brindes em massa para clientes de lojas, campanhas de conscientização rápidas e eventos religiosos.",
     "preco": 3.00,
     "imagem": "32p.jpg"
   },
   {
     "id": "32m",
     "nome": "Button 32mm - Fundo Metal",
-    "descricao": "Acabamento premium indicado para brindes institucionais e aplicações que exigem apresentação superior.",
+    "descricao": "O tamanho tradicional que todo mundo ama. Fica lindo em estojos, mochilas e jaquetas. Ideal para brindes para empresas e comércios locais, identificação de funcionários de lojas, lembranças para clientes e campanhas de conscientização.",
     "preco": 6.00,
     "imagem": "32m.jpg",
     "esgotado": true
   },
   {
+    "id": "37m",
+    "nome": "Button 37mm - Fundo Metal",
+    "descricao": "Nem tão pequeno, nem tão grande. O tamanho exclusivo ideal para lojas conceituais e marcas autorais que vendem coleções exclusivas, criadores de conteúdo e artistas independentes.",
+    "preco": 6.50,
+    "imagem": "37m.jpg",
+    "esgotado": true
+  },
+  {
     "id": "44p",
     "nome": "Button 44mm - Fundo Plástico",
-    "descricao": "Versátil e de excelente custo-benefício para campanhas, lançamentos e identificação visual.",
+    "descricao": "Destaca a sua marca ou o seu candidato com leveza e economia. Excelente área visual para logos e frases. Ideal para ações promocionais de supermercados e comércios, campanhas políticas de vereadores/equipes de panfletagem, e lembrancinhas de festas infantis (por ser mais seguro para os pequenos).",
     "preco": 3.00,
     "imagem": "44p.jpg"
   },
   {
     "id": "44m",
     "nome": "Button 44mm - Fundo Metal",
-    "descricao": "Alia padrão de mercado com acabamento diferenciado para uso profissional.",
+    "descricao": "Garante alta visibilidade para desenhos detalhados e logos. Perfeito para mochilas e bolsas grandes. Ideal para Campanhas políticas (santinhos e slogans), identificação de equipes em lojas, e lembranças de festas (aniversários, casamentos).",
     "preco": 7.00,
     "imagem": "44m.jpg",
     "esgotado": true
   },
   {
-    "id": "58p",
-    "nome": "Button 58mm - Fundo Plástico",
-    "descricao": "Recomendado para máxima exposição da marca em materiais gráficos e campanhas pontuais.",
-    "preco": 3.00,
-    "imagem": "58p.jpg"
-  },
+  "id": "58p",
+  "nome": "Button 58mm - Fundo Plástico",
+  "descricao": "Máxima visibilidade com o melhor preço do mercado. Ideal para mensagens que precisam ser lidas de longe sem pesar no bolso (nem na roupa). Campanhas políticas (candidatos majoritários/grandes comícios), promotores de vendas de lojas (tipo 'Posso Ajudar?'), crachás para grandes convenções e feiras, e eventos universitários.",
+  "preco": 3.00,
+  "imagem": "58p.jpg"
+},
   {
     "id": "58m",
     "nome": "Button 58mm - Fundo Metal",
-    "descricao": "Combina grande área de impressão com acabamento de alto padrão para materiais institucionais.",
+    "descricao": "Máximo impacto visual. Ideal para quem quer que a estampa seja lida claramente de longe. Ideal para grandes comícios e campanhas políticas (número do candidato), divulgação em massa de novas lojas/inaugurações, grandes eventos/convenções.",
     "preco": 8.00,
     "imagem": "58m.jpg",
     "esgotado": true
