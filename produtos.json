@@ -33,6 +33,7 @@
     "descricao": "Destaca a sua marca ou o seu candidato com leveza e economia. Excelente área visual para logos e frases. Ideal para ações promocionais de supermercados e comércios, campanhas políticas de vereadores/equipes de panfletagem, e lembrancinhas de festas infantis (por ser mais seguro para os pequenos).",
     "preco": 4.50,
     "imagem": "44p.jpg"
+    "esgotado": true
   },
   {
     "id": "44m",
@@ -47,6 +48,7 @@
   "descricao": "Máxima visibilidade com o melhor preço do mercado. Ideal para mensagens que precisam ser lidas de longe sem pesar no bolso (nem na roupa). Campanhas políticas (candidatos majoritários/grandes comícios), promotores de vendas de lojas (tipo 'Posso Ajudar?'), crachás para grandes convenções e feiras, e eventos universitários.",
   "preco": 5.50,
   "imagem": "58p.jpg"
+    "esgotado": true
 },
   {
     "id": "58m",
@@ -54,6 +56,7 @@
     "descricao": "Máximo impacto visual. Ideal para quem quer que a estampa seja lida claramente de longe. Ideal para grandes comícios e campanhas políticas (número do candidato), divulgação em massa de novas lojas/inaugurações, grandes eventos/convenções.",
     "preco": 8.00,
     "imagem": "58m.jpg"
+    "esgotado": true
   },
     {
     "id": "25m-nfc",
@@ -61,6 +64,5 @@
     "descricao": "Button inteligente com chip NFC. Aproxime o celular e abra seu WhatsApp ou Instagram na hora. Perfeito pra networking e divulgação rápida.",
     "preco": 15.00,
     "imagem": "25m-nfc.jpg",
-    "esgotado": true
   }
 ]
