@@ -9,8 +9,6 @@ let captchaValor = 0;
 let toastTimeout = null;
 
 const toast = document.getElementById('toast');
-const menuBtn = document.getElementById('menu-btn');
-const nav = document.getElementById('nav');
 const carrinhoFloat = document.getElementById('carrinho-float');
 const carrinhoFloatCount = document.getElementById('carrinho-float-count');
 const listaProdutos = document.getElementById('lista-produtos');
@@ -77,8 +75,10 @@ function renderizarProdutos() {
 
 function sanitizarCarrinho(dados) {
   if (!Array.isArray(dados)) return [];
+
   return dados.filter(item => {
     const produto = PRODUTOS.find(p => p.id === item.id);
+
     return item &&
            produto &&
            !produto.esgotado &&
@@ -87,6 +87,7 @@ function sanitizarCarrinho(dados) {
            item.qtd <= 99;
   }).map(item => {
     const produto = PRODUTOS.find(p => p.id === item.id);
+
     return {
       id: item.id,
       nome: produto.nome,
@@ -103,6 +104,7 @@ function salvarCarrinho() {
 function carregarCarrinho() {
   try {
     const salvo = localStorage.getItem('meewmeewx_carrinho');
+
     if (salvo) {
       const dadosBrutos = JSON.parse(salvo);
       carrinho = sanitizarCarrinho(dadosBrutos);
@@ -118,6 +120,7 @@ function carregarCarrinho() {
 function gerarCaptcha() {
   const a = Math.floor(Math.random() * 9) + 1;
   const b = Math.floor(Math.random() * 9) + 1;
+
   captchaValor = a + b;
   captchaPergunta.textContent = `Quanto é ${a} + ${b}?`;
   captchaResposta.value = '';
@@ -138,9 +141,11 @@ function getSubtotal() {
 
 function getDesconto() {
   const totalItens = getTotalItens();
+
   if (totalItens >= DESCONTO_QTD_MINIMA) {
     return getSubtotal() * DESCONTO_PERCENTUAL;
   }
+
   return 0;
 }
 
@@ -150,8 +155,10 @@ function getTotal() {
 
 function atualizarContador() {
   const total = getTotalItens();
+
   carrinhoFloatCount.textContent = total;
   carrinhoFloatCount.classList.toggle('active', total > 0);
+
   salvarCarrinho();
 }
 
@@ -175,8 +182,12 @@ function mostrarToast(msg, erro = false) {
 
 function gerarLinkWpp() {
   const nome = nomeClienteInput.value.trim();
+
   let msg = 'Olá! Quero fazer um pedido na MEEWMEEWX:\n\n';
-  if (nome) msg += `*Nome:* ${nome}\n\n`;
+
+  if (nome) {
+    msg += `*Nome:* ${nome}\n\n`;
+  }
 
   carrinho.forEach(item => {
     msg += `${item.qtd}x ${item.nome} - ${formatarPreco(item.preco * item.qtd)}\n`;
@@ -187,9 +198,11 @@ function gerarLinkWpp() {
   const total = getTotal();
 
   msg += `\n*Subtotal: ${formatarPreco(subtotal)}*`;
+
   if (desconto > 0) {
     msg += `\n*Desconto 15%: -${formatarPreco(desconto)}*`;
   }
+
   msg += `\n*Total: ${formatarPreco(total)}*`;
 
   return `https://wa.me/${contatoLoja}?text=${encodeURIComponent(msg)}`;
@@ -211,6 +224,7 @@ function renderizarCarrinho() {
         <h4></h4>
         <p></p>
       </div>
+
       <div class="item-actions">
         <button class="btn btn-qtd diminuir-qtd" data-id="${item.id}">-</button>
         <span class="item-qtd"></span>
@@ -222,6 +236,7 @@ function renderizarCarrinho() {
 
   cartItemsEl.querySelectorAll('.cart-item').forEach((el, i) => {
     const item = carrinho[i];
+
     el.querySelector('h4').textContent = item.nome;
     el.querySelector('p').textContent = `${formatarPreco(item.preco)} cada`;
     el.querySelector('.item-qtd').textContent = item.qtd;
@@ -231,6 +246,7 @@ function renderizarCarrinho() {
   const subtotal = getSubtotal();
   const desconto = getDesconto();
   const total = getTotal();
+
   const temDesconto = desconto > 0;
   const faltam = DESCONTO_QTD_MINIMA - totalItens;
 
@@ -243,13 +259,14 @@ function renderizarCarrinho() {
   descontoInfo.classList.toggle('show', temDesconto);
 
   if (totalItens > 0 && totalItens < DESCONTO_QTD_MINIMA) {
-    avisoDesconto.textContent = `Faltam ${faltam} button${faltam > 1? 's' : ''} pra ganhar 15% OFF!`;
+    avisoDesconto.textContent = `Faltam ${faltam} button${faltam > 1 ? 's' : ''} pra ganhar 15% OFF!`;
     avisoDesconto.classList.add('show');
   } else {
     avisoDesconto.classList.remove('show');
   }
 
   const podeFinalizar = totalItens >= PEDIDO_MINIMO;
+
   finalizarBtn.disabled = !podeFinalizar;
   avisoMinimo.classList.toggle('show', !podeFinalizar);
 
@@ -288,15 +305,19 @@ function fecharModal() {
 
 function alterarQtd(id, delta) {
   const item = carrinho.find(item => item.id === id);
+
   if (item) {
     item.qtd += delta;
+
     if (item.qtd <= 0) {
       removerDoCarrinho(id);
+
     } else if (item.qtd > 99) {
       item.qtd = 99;
       mostrarToast('Limite de 99 unidades', true);
       atualizarContador();
       renderizarCarrinho();
+
     } else {
       atualizarContador();
       renderizarCarrinho();
@@ -306,17 +327,22 @@ function alterarQtd(id, delta) {
 
 function removerDoCarrinho(id) {
   const index = carrinho.findIndex(item => item.id === id);
+
   if (index > -1) {
     const item = carrinho[index];
+
     carrinho.splice(index, 1);
+
     atualizarContador();
     renderizarCarrinho();
+
     mostrarToast(`${item.nome} removido`);
   }
 }
 
 function adicionarAoCarrinho(id) {
   const produto = PRODUTOS.find(p => p.id === id);
+
   if (!produto) {
     mostrarToast('Produto inválido', true);
     return;
@@ -330,31 +356,45 @@ function adicionarAoCarrinho(id) {
   const itemExistente = carrinho.find(item => item.id === id);
 
   if (itemExistente) {
-    if(itemExistente.qtd < 99) {
+    if (itemExistente.qtd < 99) {
       itemExistente.qtd++;
     } else {
       mostrarToast('Limite de 99 unidades', true);
       return;
     }
+
   } else {
-    carrinho.push({ id, nome: produto.nome, preco: produto.preco, qtd: 1 });
+    carrinho.push({
+      id,
+      nome: produto.nome,
+      preco: produto.preco,
+      qtd: 1
+    });
   }
 
   atualizarContador();
   mostrarToast(`${produto.nome} adicionado!`);
 }
 
+/* EVENTOS DO CARRINHO */
+
 carrinhoFloat.addEventListener('click', abrirModal);
+
 closeModal.addEventListener('click', fecharModal);
+
 cartModal.addEventListener('click', e => {
-  if (e.target === cartModal) fecharModal();
+  if (e.target === cartModal) {
+    fecharModal();
+  }
 });
 
 limparBtn.addEventListener('click', () => {
   carrinho = [];
   nomeClienteInput.value = '';
+
   atualizarContador();
   renderizarCarrinho();
+
   mostrarToast('Carrinho limpo');
 });
 
@@ -362,6 +402,7 @@ finalizarBtn.addEventListener('click', e => {
   e.preventDefault();
 
   const totalItens = getTotalItens();
+
   if (totalItens < PEDIDO_MINIMO) {
     mostrarToast(`Pedido mínimo de ${PEDIDO_MINIMO} buttons`, true);
     return;
@@ -374,6 +415,7 @@ finalizarBtn.addEventListener('click', e => {
   }
 
   const resposta = parseInt(captchaResposta.value);
+
   if (resposta !== captchaValor) {
     captchaErro.classList.add('show');
     captchaResposta.focus();
@@ -382,29 +424,35 @@ finalizarBtn.addEventListener('click', e => {
   }
 
   captchaErro.classList.remove('show');
+
   window.open(gerarLinkWpp(), '_blank');
 
   setTimeout(() => {
     carrinho = [];
     nomeClienteInput.value = '';
+
     atualizarContador();
     fecharModal();
   }, 500);
 });
 
-menuBtn.addEventListener('click', () => {
-  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-});
+/* ROLAGEM SUAVE PARA LINKS INTERNOS */
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-    if (window.innerWidth <= 768) nav.style.display = 'none';
+    const destino = document.querySelector(link.getAttribute('href'));
+
+    if (destino) {
+      e.preventDefault();
+
+      destino.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   });
 });
+
+/* INICIALIZAÇÃO */
 
 carregarProdutos().then(() => {
   carregarCarrinho();

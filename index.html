@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="MEEWMEEWX - Buttons personalizados de 2.5cm, 3.2cm, 3.7cm, 4.4cm e 5.8cm. Fundo plástico ou metal. Pedido mínimo 5 unidades. 15% OFF acima de 15 buttons.">
   <title>MEEWMEEWX</title>
-  
+
   <!-- Open Graph / WhatsApp Preview -->
   <meta property="og:title" content="MEEWMEEWX - Buttons Personalizados">
   <meta property="og:description" content="Buttons  2.5cm, 3.2cm, 3.7cm, 4.4cm e 5.8cm. Fundo plástico ou metal. A partir de R$3.">
@@ -14,10 +14,12 @@
   <meta property="og:url" content="https://meewmeewx.pages.dev/">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#FF6B9D">
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="banner-desconto-topo">
     🎉 15% OFF em pedidos acima de 15 buttons
   </div>
@@ -28,16 +30,7 @@
   </div>
 
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="meewmeewx" draggable="false">
-    </div>
-    <div class="header-right">
-      <button id="menu-btn">☰</button>
-      <nav id="nav">
-        <a href="#buttons">Buttons</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </div>
+    <h1 class="site-title">MEEWMEEWX</h1>
   </header>
 
   <main>
@@ -45,6 +38,7 @@
       <h2>
         <img src="icone-buttons.png" alt="Buttons" class="titulo-buttons" draggable="false">
       </h2>
+
       <div class="produtos" id="lista-produtos">
         <!-- Produtos carregados via JS do produtos.json -->
       </div>
@@ -52,7 +46,7 @@
 
     <section id="faq">
       <h2>Perguntas frequentes</h2>
-      
+
       <details>
         <summary>Como envio minha arte?</summary>
         <p>Depois de finalizar o pedido no WhatsApp, você manda a imagem. Aceito PNG ou JPG.</p>
@@ -76,31 +70,40 @@
         <h2>Seu Carrinho</h2>
         <button class="close-modal" id="close-modal">&times;</button>
       </div>
+
       <div class="modal-body" id="cart-items">
         <div class="cart-empty">Carrinho vazio</div>
       </div>
+
       <div class="modal-footer" id="cart-footer" style="display: none;">
         <input type="text" class="cliente-input" id="nome-cliente" placeholder="Seu nome" maxlength="50">
+
         <div class="captcha-box">
           <div class="captcha-pergunta" id="captcha-pergunta">Quanto é 2 + 3?</div>
           <input type="number" class="captcha-input" id="captcha-resposta" placeholder="Resposta">
           <div class="captcha-erro" id="captcha-erro">Resposta incorreta!</div>
         </div>
+
         <div class="aviso-desconto" id="aviso-desconto"></div>
         <div class="desconto-info" id="desconto-info">🎉 Desconto de 15% aplicado!</div>
+
         <div class="cart-subtotal" id="cart-subtotal">
           <span>Subtotal:</span>
           <span id="subtotal-valor">R$ 0,00</span>
         </div>
+
         <div class="cart-desconto" id="cart-desconto">
           <span>Desconto 15%:</span>
           <span id="desconto-valor">-R$ 0,00</span>
         </div>
+
         <div class="cart-total">
           <span>Total:</span>
           <span id="cart-total">R$ 0,00</span>
         </div>
+
         <div class="aviso-minimo" id="aviso-minimo">Pedido mínimo: 3 buttons</div>
+
         <div class="modal-actions">
           <button class="btn btn-outline" id="limpar-carrinho">Limpar</button>
           <button class="btn" id="finalizar-compra">Finalizar no WhatsApp</button>
@@ -117,5 +120,6 @@
   <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
